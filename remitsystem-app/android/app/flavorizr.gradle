@@ -1,0 +1,16 @@
+android {
+    flavorDimensions += "app"
+
+    productFlavors {
+        development {
+            dimension "app"
+            applicationId "com.RemitSystem.remit"
+            resValue "string", "app_name", "RemitSystemm"
+        }
+        production {
+            dimension "app"
+            applicationId "com.RemitSystem.remit"
+            resValue "string", "app_name", "RemitSystemm"
+        }
+    }
+}
