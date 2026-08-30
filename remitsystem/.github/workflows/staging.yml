@@ -1,0 +1,81 @@
+name: Deploy to staging
+
+on:
+  push:
+    branches:
+      - staging
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Copy .env
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Directory Permissions
+        run: chmod -R 777 storage bootstrap/cache
+      - name: Clean up untracked files
+        run: |
+          git reset --hard HEAD
+          git clean -fd
+      - name: Commit built assets
+        run: |
+          git config --local user.email "aasthastha143@gmail.com"
+          git config --local user.name "Aastha Shrestha"
+          git checkout -B staging-deploy
+          git add -f public/
+          if ! git diff --cached --quiet; then
+            git commit -m "Build front-end assets"
+            git push -f origin staging-deploy
+          else
+            echo "No changes to commit. Skipping push."
+          fi
+          git push -f origin staging-deploy
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to staging
+        uses: appleboy/ssh-action@master
+        with:
+          username: ${{ vars.STAGING_SSH_USERNAME }}
+          host: ${{ vars.STAGING_SSH_HOST }}
+          key: ${{ secrets.STAGING_SSH_KEY }}
+          port: ${{ vars.STAGING_SSH_PORT }}
+          script: |
+            cd ${{ vars.STAGING_SSH_PATH }}
+            chmod +x ./staging-deploy.sh
+            ./staging-deploy.sh
+             
+  delete:
+    name: Delete staging-deploy branch
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+      - name: Delete staging-deploy branch
+        run: |
+          git config --local user.email "aasthastha143@gmail.com"
+          git config --local user.name "Aastha Shrestha"
+          git push origin --delete staging-deploy
+
+  lower_branch:
+    name: Create lower branch
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+      - name: Fetch all branches
+        run: |
+          git config --local user.email "aasthastha143@gmail.com"
+          git config --local user.name "Aastha Shrestha"
+          git fetch --all
+      - name: Create lower branch
+        run: |
+          git checkout -B ${{ vars.STAGING_LOWER_BRANCH }}
+          git push -f origin ${{ vars.STAGING_LOWER_BRANCH }}
+
+

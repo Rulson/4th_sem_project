@@ -1,0 +1,321 @@
+.error {
+    color: red;
+}
+
+
+.input-group-text {
+    height: 100%;
+}
+
+#dob {
+    width: 80%;
+}
+
+#expiry_date {
+    width: 80%;
+}
+.asterik-red{
+    color: red;
+}
+
+
+.timeline {
+    list-style: none;
+    padding: 20px 0 20px;
+    position: relative;
+    margin-top: 35px;
+}
+
+.timeline:before {
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 3px;
+    background-color: #eeeeee;
+
+    margin-left: -1.5px;
+}
+
+.timeline > li {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline > li:before,
+.timeline > li:after {
+    content: " ";
+    display: table;
+}
+
+.timeline > li:after {
+    clear: both;
+}
+
+.timeline > li:before,
+.timeline > li:after {
+    content: " ";
+    display: table;
+}
+
+.timeline > li:after {
+    clear: both;
+}
+
+.timeline > li > .timeline-panel {
+    width: 95%;
+    float: left;
+    margin-left: 50px;
+    border: 1px solid #d4d4d4;
+    border-radius: 2px;
+    padding: 20px;
+    position: relative;
+    -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+}
+
+.timeline > li > .timeline-panel:before {
+    position: absolute;
+    top: 26px;
+    right: -15px;
+    display: inline-block;
+    border-top: 15px solid transparent;
+    border-left: 15px solid #ccc;
+    border-right: 0 solid #ccc;
+    border-bottom: 15px solid transparent;
+    content: " ";
+}
+
+.timeline > li > .timeline-panel:after {
+    position: absolute;
+    top: 27px;
+    right: -14px;
+    display: inline-block;
+    border-top: 14px solid transparent;
+    border-left: 14px solid #fff;
+    border-right: 0 solid #fff;
+    border-bottom: 14px solid transparent;
+    content: " ";
+}
+
+.timeline > li > .timeline-badge {
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+    text-align: center;
+    position: absolute;
+    top: 16px;
+
+    margin-left: -25px;
+    background-color: #999999;
+    z-index: 100;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:before {
+    border-left-width: 0;
+    border-right-width: 15px;
+    left: -15px;
+    right: auto;
+
+}
+
+.timeline > li.timeline-inverted > .timeline-panel:after {
+    border-left-width: 0;
+    border-right-width: 14px;
+    left: -14px;
+    right: auto;
+}
+
+.timeline-badge.primary {
+    background-color: #2e6da4 !important;
+}
+
+.timeline-badge.success {
+    background-color: #3f903f !important;
+}
+
+.timeline-badge.warning {
+    background-color: #f0ad4e !important;
+}
+
+.timeline-badge.danger {
+    background-color: #d9534f !important;
+}
+
+.timeline-badge.info {
+    background-color: #5bc0de !important;
+}
+
+.timeline-title {
+    margin-top: 0;
+    color: inherit;
+}
+
+.timeline-body > p,
+.timeline-body > ul {
+    margin-bottom: 0;
+}
+
+.timeline-body > p + p {
+    margin-top: 5px;
+}
+
+@media (max-width: 767px) {
+    ul.timeline:before {
+        left: 40px;
+    }
+
+    ul.timeline > li > .timeline-panel {
+        width: calc(100% - 90px);
+        width: -moz-calc(100% - 90px);
+        width: -webkit-calc(100% - 90px);
+    }
+
+    ul.timeline > li > .timeline-badge {
+        left: 15px;
+        margin-left: 0;
+        top: 16px;
+    }
+
+    ul.timeline > li > .timeline-panel {
+        float: right;
+    }
+
+    ul.timeline > li > .timeline-panel:before {
+        border-left-width: 0;
+        border-right-width: 15px;
+        left: -15px;
+        right: auto;
+    }
+
+    ul.timeline > li > .timeline-panel:after {
+        border-left-width: 0;
+        border-right-width: 14px;
+        left: -14px;
+        right: auto;
+    }
+}
+
+button, html [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: inherit;
+}
+
+a:not([href]):not([tabindex]) {
+    color: #fff;
+    text-decoration: none;
+}
+
+.receipt_received {
+    background: #20a8d8;
+    color: #000 !important;
+}
+
+.excess_payment {
+     background: #f0d652;
+    color: #000 !important;
+}
+
+.paid {
+    background: #4dbd74;
+    color: #000 !important;
+}
+
+.awaiting_payment {
+    background: #ffc107;
+    color: #000 !important;
+}
+
+.cancelled {
+    background: red;
+    color: #000 !important;
+}
+
+.rks_ready, .talak_ready, .process_in_nepal, .process_to_nepal, .bank_ready, .ime_ready {
+    background: #6f42c1;
+    color: #fff !important;
+}
+
+.ready_to_transfer {
+    background: #f86c6b;
+    color: #000 !important;
+}
+
+.pending, .ready_to_collect, .processing, .pending_delivery, .hold, .pending_amount, .pending_processing, .review_payment, .ime_process {
+    background: #a4b7c1;
+    color: #000 !important;
+}
+
+.transferred {
+    background: #20a8d8;
+    color: #000 !important;
+}
+
+.badge-black {
+    color: #000 !important;
+}
+
+.distributor_0 {
+    background: #e5e5e5;
+    color: #000 !important;
+}
+.distributor_1 {
+    background: #506eff;
+}
+.distributor_2 {
+    background: #11f441;
+    color: #000 !important;
+}
+.distributor_3 {
+    background: #9bf442;
+    color: #000 !important;
+}
+.distributor_4 {
+    background: #00FA9A;
+    color: #000 !important;
+}
+.distributor_5 {
+    background: #8A2BE2;
+}
+.distributor_6 {
+    background: #8FBC8F;
+    color: #000 !important;
+}
+.distributor_7 {
+    background: #DE7B40;
+    color: #000 !important;
+}
+.distributor_8 {
+    background: #B5E6EE;
+    color: #000 !important;
+}
+.distributor_9 {
+    background: #3DA9D0;
+}
+.distributor_10 {
+    background: #adffae;
+    color: #000 !important;
+}
+.distributor_11 {
+    background: #f4c137;
+    color: #000 !important;
+}
+.distributor_12 {
+    background: #25f48a;
+    color: #000 !important;
+}
+.distributor_13 {
+    background: #f41522;
+    color: #000 !important;
+}
+.distributor_14 {
+    background: #11cff4;
+}
+.distributor_15 {
+    background: #64ebdf;
+}
