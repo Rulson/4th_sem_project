@@ -1,0 +1,112 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.lerna-debug.log*
+
+# Environment files (contains secrets)
+.env
+.env.*
+!.env.example
+
+# Node deps (any depth)
+node_modules/
+
+###############################################################################
+# Laravel backend (remitsystem/)
+###############################################################################
+
+# Dependencies
+vendor/
+
+# Build / compiled assets
+public/hot
+public/storage
+public/mix-manifest.json
+public/js/*
+public/css/*
+.phpunit.result.cache
+storage/*.key
+storage/clockwork/
+storage/debugbar/
+storage/logs/*
+storage/pail/
+storage/app/public/*
+storage/framework/cache/*
+storage/framework/sessions/*
+storage/framework/views/*
+storage/framework/testing/*
+storage/framework/cache/data/*
+
+# IDE helper / generated files
+_ide_helper.php
+_ide_helper_models.php
+.phpstorm.meta.php
+
+# Compiled / generated
+composer.phar
+Homestead.json
+Homestead.yaml
+auth.json
+phpunit.xml.bak
+
+# OS / misc
+webpack.mix.js.map
+
+###############################################################################
+# Flutter app (remitsystem-app/)
+###############################################################################
+
+# Dart / Flutter
+.dart_tool/
+.packages
+.pub-cache/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-plugins-dependencies.trucks
+coverage/
+
+# Android
+android/.gradle/
+android/local.properties
+android/key.properties
+*.jks
+*.keystore
+!*.jks.keepme
+
+# iOS / macOS
+**/ios/Flutter/.last_build_id
+**/ios/Flutter/App.framework/
+**/ios/Flutter/Flutter.framework/
+**/ios/Flutter/flutter_assets/
+**/ios/Flutter/flutter_export_environment.sh
+**/ios/Flutter/Generated.xcconfig
+**/ios/Pods/
+**/ios/.symlinks/
+**/ios/Flutter/ephemeral/
+**/ios/Runner/GeneratedPluginRegistrant.*
+**/macos/Flutter/ephemeral/
+**/macos/Pods/
+**/macos/.symlinks/
+
+# Web
+web/**.dart_tool
+
+# Misc / generated
+**/.DS_Store

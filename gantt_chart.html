@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remit Management System - Gantt Chart</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            padding: 30px;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, #1a237e, #283593);
+            color: white;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 22px;
+            margin-bottom: 6px;
+        }
+        .header p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+        .gantt-container {
+            padding: 25px;
+            overflow-x: auto;
+        }
+        .gantt-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .gantt-table th {
+            background: #e8eaf6;
+            color: #1a237e;
+            padding: 10px 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            border: 1px solid #c5cae9;
+        }
+        .gantt-table th:first-child {
+            text-align: left;
+            width: 250px;
+            padding-left: 15px;
+        }
+        .gantt-table td {
+            padding: 8px 6px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+            height: 38px;
+        }
+        .gantt-table td:first-child {
+            text-align: left;
+            font-weight: 500;
+            font-size: 12px;
+            color: #333;
+            padding-left: 15px;
+        }
+        .bar {
+            display: block;
+            height: 20px;
+            border-radius: 4px;
+            margin: 0 auto;
+        }
+        .bar-blue { background: linear-gradient(135deg, #1565c0, #1976d2); }
+        .bar-green { background: linear-gradient(135deg, #2e7d32, #388e3c); }
+        .bar-orange { background: linear-gradient(135deg, #e65100, #f57c00); }
+        .bar-purple { background: linear-gradient(135deg, #6a1b9a, #7b1fa2); }
+        .bar-teal { background: linear-gradient(135deg, #00695c, #00897b); }
+        .bar-red { background: linear-gradient(135deg, #c62828, #d32f2f); }
+        .bar-grey { background: linear-gradient(135deg, #424242, #616161); }
+        .milestone {
+            width: 14px;
+            height: 14px;
+            background: #ff6f00;
+            transform: rotate(45deg);
+            margin: 0 auto;
+            border: 2px solid #e65100;
+        }
+        .legend {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 15px 25px;
+            background: #fafafa;
+            border-top: 1px solid #e0e0e0;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 11px;
+            color: #555;
+        }
+        .legend-color {
+            width: 18px;
+            height: 10px;
+            border-radius: 3px;
+        }
+        .footer {
+            text-align: center;
+            padding: 12px;
+            background: #e8eaf6;
+            font-size: 11px;
+            color: #1a237e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Remit Management System</h1>
+            <p>Project Gantt Chart | Waterfall Model | 10 Weeks</p>
+        </div>
+
+        <div class="gantt-container">
+            <table class="gantt-table">
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Week 1</th>
+                        <th>Week 2</th>
+                        <th>Week 3</th>
+                        <th>Week 4</th>
+                        <th>Week 5</th>
+                        <th>Week 6</th>
+                        <th>Week 7</th>
+                        <th>Week 8</th>
+                        <th>Week 9</th>
+                        <th>Week 10</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1. Requirement Analysis</td>
+                        <td><span class="bar bar-blue"></span></td>
+                        <td><span class="bar bar-blue"></span></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>2. System Design</td>
+                        <td></td><td></td>
+                        <td><span class="bar bar-green"></span></td>
+                        <td><span class="bar bar-green"></span></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>3. Database Design</td>
+                        <td></td><td></td><td></td>
+                        <td><span class="bar bar-green"></span></td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>4. Frontend Development</td>
+                        <td></td><td></td><td></td><td></td>
+                        <td><span class="bar bar-orange"></span></td>
+                        <td><span class="bar bar-orange"></span></td>
+                        <td><span class="bar bar-orange"></span></td>
+                        <td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>5. Backend Development</td>
+                        <td></td><td></td><td></td><td></td>
+                        <td><span class="bar bar-purple"></span></td>
+                        <td><span class="bar bar-purple"></span></td>
+                        <td><span class="bar bar-purple"></span></td>
+                        <td></td><td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>6. Testing</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td><span class="bar bar-teal"></span></td>
+                        <td></td><td></td>
+                    </tr>
+                    <tr>
+                        <td>7. Deployment</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td><span class="bar bar-red"></span></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td>8. Documentation</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td><span class="bar bar-grey"></span></td>
+                        <td><span class="bar bar-grey"></span></td>
+                    </tr>
+                    <tr>
+                        <td>Final Submission</td>
+                        <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        <td><div class="milestone"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #1565c0, #1976d2);"></div>
+                <span>Requirement Analysis</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #2e7d32, #388e3c);"></div>
+                <span>System & DB Design</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #e65100, #f57c00);"></div>
+                <span>Frontend (Flutter)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #6a1b9a, #7b1fa2);"></div>
+                <span>Backend (Laravel)</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #00695c, #00897b);"></div>
+                <span>Testing</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #c62828, #d32f2f);"></div>
+                <span>Deployment</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background: linear-gradient(135deg, #424242, #616161);"></div>
+                <span>Documentation</span>
+            </div>
+            <div class="legend-item">
+                <div style="width: 10px; height: 10px; background: #ff6f00; transform: rotate(45deg); border: 2px solid #e65100;"></div>
+                <span>Milestone</span>
+            </div>
+        </div>
+
+      
+    </div>
+</body>
+</html>
